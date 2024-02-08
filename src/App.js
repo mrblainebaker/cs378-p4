@@ -80,15 +80,45 @@ const menuItems = [
 
 
 function App() {
-  return (
-    <div>
-      <h1>Menu</h1>
-      <div className="menu">
-        {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        <MenuItem title={menuItems[0].title} /> {/* Example for how to use a component */}
-      </div>
-    </div>
-  );
+// Create a container div element
+var containerDiv = document.createElement("div");
+containerDiv.id = "output"; // Set an id for the container div
+container
+// Loop through each element of the array
+menuItems.forEach(function(element) {
+    var menuItemContainer = document.createElement("div");
+    // Create a new div element for each array element
+    var name = document.createElement("h1");
+    // Set the text content of the div to the current array element
+    name.textContent = element.title;
+    menuItemContainer.appendChild(name);
+
+    var image = document.createElement("img");
+    image.alt = element.imageName;
+    image.src = "./images/" +  String(element.imageName);
+    menuItemContainer.appendChild(image);
+
+
+
+    var desc = document.createElement("p");
+    desc.textContent = element.description;
+    menuItemContainer.appendChild(desc);
+
+    var price = document.createElement("p");
+    price.textContent = element.price;
+    menuItemContainer.appendChild(price);
+
+    var button = document.createElement("button");
+    button.textContent = "Add";
+    menuItemContainer.appendChild(button);
+
+
+    // Append the div to the container div
+    containerDiv.appendChild(menuItemContainer);
+});
+
+// Append the container div to the body of the HTML document
+document.body.appendChild(containerDiv);
 }
 
 export default App;
