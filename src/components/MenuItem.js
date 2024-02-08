@@ -7,16 +7,15 @@ import React from 'react';
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({ title, description, imageName, price }) => {
     var start = "../images/"
-    var imageLoc = start.concat({imageName});
-    console.log(imageLoc);
+    var imageLoc = start + {imageName};
     return (
-        <row>
+        <>
             <h2>{title}</h2>
+            <img src={imageLoc} alt={imageLoc}></img>
             <p>{description}</p>
-            <img src = {imageLoc} alt = "alt text" ></img>
             <p>{price}</p>
             <button>Add</button>
-        </row>
+        </>
     );
 };
 
