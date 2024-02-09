@@ -8,21 +8,79 @@
 }
 
 .button{
+    padding: 5px 10px;
     border-radius: 30%;
     background-color:lightgray;
   }
 
 .menuTitle{
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight:100%;
   color:black;
 }
 
-
 .menuDesc{
-  color:darkblue;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight:50%;
+  color:blue;
+  text-wrap: 100;
 }
 
 img{
+  object-fit: cover;
+  max-width:60%;
+  min-width:5%;
+
+}
+
+.menuItem{
+  margin: 10%;
+}
+
+.logoImg{
+  margin-left:25%;
   max-width:50%;
-  margin: 5%;
+}
+
+.price-add{
+  display:flex;
+}
+
+.menu-price{
+  margin:10%
+}
+
+
+.desc1{
+  color:orange;
+  font-family:Brush Script MT, Brush Script Std, cursive;
+  margin-left:25%
+}
+
+.desc2{
+  margin-left:10%
+}
+.menu-item {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto new lines */
+}
+
+.content-column {
+  flex-grow: 1; /* Take remaining space */
+}
+
+.image-column {
+  flex: 0 0 34%; /* Don't grow, don't shrink, initial width based on content */
+  margin-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-grow: 1; /* Each column takes equal width */
 }

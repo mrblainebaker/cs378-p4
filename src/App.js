@@ -1,5 +1,6 @@
 import './App.css';
-import MenuItem from './MenuItem';
+import MenuItem from './components/MenuItem';
+import MenuLogo from './components/MenuLogo'
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
 // Menu data. An array of objects where each object represents a menu item. Each menu item has an id, title, description, image name, and price.
@@ -77,26 +78,23 @@ const menuItems = [
   }
 ];
 
+const menuLogo = [
+  {
+    id: 1,
+    top_desc: 'Baking, It\'s in the Family',
+    bottom_desc: 'The Best Bakers on campus',
+    imageName: 'logo.png'
+  }
+];
 
 
 function App() {
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-5"></div>
-        <div className="col-md-5">
-          <h1>Put Logo above Menu</h1>
-        </div>
-      </div>
 
-      <div className="row">
-        <div className="col-md-5"></div>
-        <div className="col-md-5">
-          <p>this is just a descripotion</p>
-
-        </div>
-
-      </div>
+    <div className="menuTop">
+      {menuLogo.map(item => (
+        <MenuLogo key = {item.id}{...item} />
+      ))}
       
       <div className="menu">
         {menuItems.map(item => (
