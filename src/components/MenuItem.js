@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './AddButton'
 //import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // This is a functional component that represents a single menu item. It currently takes in the title and displays it in an h2 element.
@@ -9,14 +10,14 @@ const MenuItem = ({ title, description, imageName, price }) => {
     return (
         <div className="menu-item">
       <div className="image-column">
-        <img src={"images/" + imageName} alt={imageName} />
+        <img src={"/images/" + imageName} alt={imageName} />
       </div>
       <div className="content-column">
         <h2 className="menuTitle">{title}</h2>
         <p className="menuDesc">{description}</p>
         <div className="price-add">
             <p className="menu-price">{"$" + price}</p>
-            <button className="button">Add</button>
+            <Counter />
         </div>
       </div>
     </div>
