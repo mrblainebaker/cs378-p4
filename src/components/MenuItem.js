@@ -20,15 +20,15 @@ const MenuItem = ({ id, title, description, imageName, price, addToSubtotal, rem
 
   return (
     <div className="menu-item row justify-content-center">
-      <div className="image-column col-md-4 text-center">
+      <div className="image-column">
         <img src={"./images/" + imageName} alt={imageName} />
       </div>
-      <div className="content-column col-md-4 text-center">
+      <div className="content-column">
         <h2 className="menuTitle">{title}</h2>
         <p className="menuDesc">{description}</p>
         <div className="price-add">
           <p className="menu-price">{"$" + price}</p>
-          <div>
+          <div className="button-group">
             <button onClick={decrement} className="button">-</button>
             <span>{count}</span>
             <button onClick={increment} className="button">+</button>
