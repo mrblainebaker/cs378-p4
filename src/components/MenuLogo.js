@@ -11,7 +11,7 @@ const MenuLogo = ({ top_desc, bottom_desc, imageName }) => {
         <div className="row">
             <div className="col-md-6"></div>
             <div className="col-md-4">
-                <img src={"./images/" + imageName} className="logoImg" />
+                <img src={"./images/" + imageName} alt={imageName} className="logoImg" />
                 <h3 class="desc1">{top_desc}</h3>
                 <h3 class="desc2">{bottom_desc}</h3>
             </div>

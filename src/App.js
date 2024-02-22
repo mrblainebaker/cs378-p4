@@ -2,6 +2,8 @@ import './App.css';
 import MenuItem from './components/MenuItem';
 import MenuLogo from './components/MenuLogo'
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
+import React, { useState } from 'react';
+
 
 // Menu data. An array of objects where each object represents a menu item. Each menu item has an id, title, description, image name, and price.
 // You can use the image name to get the image from the images folder.
@@ -89,19 +91,89 @@ const menuLogo = [
 
 
 function App() {
-  return (
 
+  const [subtotal, setSubtotal] = useState(0);
+  const [itemCounts, setItemCounts] = useState({});
+
+
+  const addToSubtotal = (amount) => {
+    setSubtotal(subtotal + amount);
+  };
+
+  const removeFromSubtotal = (amount) => {
+    if(subtotal - amount >= 0){
+      setSubtotal(subtotal - amount);
+    }
+  };
+
+  const clearAll = () => {
+    setSubtotal(0);
+    resetAllItems();
+  };
+
+  const resetAllItems = () => {
+    // Reset the count of each item
+    const updatedItemCounts = {};
+    menuItems.forEach(item => {
+      updatedItemCounts[item.id] = 0;
+    });
+    setItemCounts(updatedItemCounts);
+    // Reset the subtotal
+    setSubtotal(0);
+  };
+
+
+
+  const formatOrderMessage = () => {
+    const orderedItems = [];
+    for (const itemId in itemCounts) {
+      const count = itemCounts[itemId];
+      if (count > 0) {
+        const menuItem = menuItems.find(item => item.id === parseInt(itemId));
+        orderedItems.push(`${count} x ${menuItem.title}`);
+      }
+    }
+    return orderedItems.length > 0 ? orderedItems.join('\n') : 'No items in cart';
+  };
+
+  const placeOrder = () => {
+    const orderMessage = formatOrderMessage();
+    if(orderMessage == 'No items in cart'){
+      window.alert(`${orderMessage}`);
+    } else {
+      window.alert(`Order Placed!\n\n${orderMessage}`);
+    }
+  };
+
+  return (
+    <>
     <div className="menuTop">
       {menuLogo.map(item => (
         <MenuLogo key = {item.id}{...item} />
       ))}
-      
+      </div>
       <div className="menu">
         {menuItems.map(item => (
-          <MenuItem key = {item.id} {...item} />
+          <MenuItem
+          key={item.id}
+          id={item.id}
+          addToSubtotal={addToSubtotal}
+          removeFromSubtotal={removeFromSubtotal}
+          count={itemCounts[item.id] || 0}
+          setCount={(count) => setItemCounts({...itemCounts, [item.id]: count})}
+          {...item}
+        />
         ))}
       </div>
+    <div>
+      <div className="total">
+        <p>subtotal = ${subtotal.toFixed(2)}</p>
+
+        <button onClick={clearAll}>clear Cart</button>
+        <button onClick={placeOrder}>order</button>
+      </div>
     </div>
+    </>
   );
 }
 
