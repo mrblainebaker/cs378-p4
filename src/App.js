@@ -168,10 +168,17 @@ function App() {
       </div>
     <div>
       <div className="total">
-        <p>subtotal = ${subtotal.toFixed(2)}</p>
+        <div className="row">
+          <div className="col">
+            <p>subtotal = ${subtotal.toFixed(2)}</p>
+          </div>
+          <div className="col">
+            <button onClick={clearAll} className="button">clear Cart</button>
+            <button onClick={placeOrder} className="button">order</button>
+          </div>
+        </div>
 
-        <button onClick={clearAll} className="button">clear Cart</button>
-        <button onClick={placeOrder} className="button">order</button>
+        
       </div>
     </div>
     </div>
