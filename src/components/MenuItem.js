@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 
+
+
 //import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // This is a functional component that represents a single menu item. It currently takes in the title and displays it in an h2 element.
@@ -30,7 +32,7 @@ const MenuItem = ({ id, title, description, imageName, price, addToSubtotal, rem
     return (
         <div className="menu-item">
       <div className="image-column">
-      <img src={imageName} alt={"PLEASE/"+imageName} />
+      <img src="/images/{imageName}" alt={"PLEASE/"+imageName} />
       </div>
       <div className="content-column">
         <h2 className="menuTitle">{title}</h2>
