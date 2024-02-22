@@ -138,7 +138,7 @@ function App() {
 
   const placeOrder = () => {
     const orderMessage = formatOrderMessage();
-    if(orderMessage == 'No items in cart'){
+    if(orderMessage === 'No items in cart'){
       window.alert(`${orderMessage}`);
     } else {
       window.alert(`Order Placed!\n\n${orderMessage}`);
