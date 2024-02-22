@@ -32,7 +32,7 @@ const MenuItem = ({ id, title, description, imageName, price, addToSubtotal, rem
     return (
         <div className="menu-item">
       <div className="image-column">
-      <img src="/images/{imageName}" alt={"PLEASE/"+imageName} />
+      <img src={"/images/" + imageName} alt={"PLEASE/"+imageName} />
       </div>
       <div className="content-column">
         <h2 className="menuTitle">{title}</h2>
