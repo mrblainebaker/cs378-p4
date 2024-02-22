@@ -20,6 +20,11 @@
   color:black;
 }
 
+.centerIt{
+  align-items:center;
+  justify-content: center;
+}
+
 .menuDesc{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -32,15 +37,12 @@ img{
   object-fit: cover;
   max-width:60%;
   min-width:5%;
-
 }
 
 .menuItem{
-  margin: 10%;
 }
 
 .logoImg{
-  margin-left:25%;
   max-width:50%;
 }
 
@@ -49,18 +51,24 @@ img{
 }
 
 .menu-price{
-  margin:10%
+  margin:10%;
+}
+
+.centered {
+  display: grid;
+  place-items: center;
+  height: 100vh; /* Optional: for vertical centering */
 }
 
 
 .desc1{
   color:orange;
   font-family:Brush Script MT, Brush Script Std, cursive;
-  margin-left:25%
+  margin-left:25%;
 }
 
 .desc2{
-  margin-left:10%
+  margin-left:10%;
 }
 .menu-item {
   display: flex;

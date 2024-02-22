@@ -147,7 +147,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="centerIt">
     <div className="menuTop">
       {menuLogo.map(item => (
         <MenuLogo key = {item.id}{...item} />
@@ -170,11 +170,11 @@ function App() {
       <div className="total">
         <p>subtotal = ${subtotal.toFixed(2)}</p>
 
-        <button onClick={clearAll}>clear Cart</button>
-        <button onClick={placeOrder}>order</button>
+        <button onClick={clearAll} className="button">clear Cart</button>
+        <button onClick={placeOrder} className="button">order</button>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
