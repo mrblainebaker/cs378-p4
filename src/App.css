@@ -86,11 +86,10 @@ img{
 .desc1{
   color:orange;
   font-family:Brush Script MT, Brush Script Std, cursive;
-  margin-left:25%;
 }
 
 .desc2{
-  margin-left:10%;
+  color:black;
 }
 .menu-item {
   display: flex;
