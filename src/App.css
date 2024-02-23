@@ -17,6 +17,7 @@
 .button-group {
   display:flex;
   align-items: center;
+  margin-right:10%;
 }
 
 .price-add {
