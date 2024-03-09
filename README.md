@@ -1,3 +1,9 @@
+Notes:
+    on github pages, the API calls don't seem to work
+    so if you want to run it, clone the repo and npm start
+    and it should then work :)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
