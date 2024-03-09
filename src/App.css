@@ -3,113 +3,11 @@
   Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
 */
 
-.menu {
-  color: blue;
-}
-
-.button{
-    border-radius: 40%;
-    size: 10px;
-    background-color:lightgray;
-    margin: 0 5px;
-  }
-
-.button-group {
-  display:flex;
-  align-items: center;
-  margin-right:10%;
-}
-
-.price-add {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menuTitle{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight:100%;
-  color:black;
-}
-
-.centerIt{
+.middle_align{
   align-items:center;
   justify-content: center;
 }
 
-.menuDesc{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight:50%;
-  color:blue;
-  text-wrap: 100;
-}
-
-img{
-  object-fit: cover;
-  max-width:60%;
-  min-width:5%;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.subtotal {
-  margin-left: 20px; 
-}
-
-.logoImg{
-  max-width:50%;
-}
-
-.price-add{
-  display:flex;
-  align-items: center;
-}
-
-.menu-price{
-  margin:10px;
-}
-
-.centered {
-  display: grid;
-  place-items: center;
-  height: 100vh; 
-}
-
-
-.desc1{
-  color:orange;
-  font-family:Brush Script MT, Brush Script Std, cursive;
-}
-
-.desc2{
-  color:black;
-}
-.menu-item {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.content-column {
-  flex: 1;
-}
-
-.image-column {
-  flex: 1;
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.column {
-  flex-grow: 1;
+.buttonCol{
+  margin:1%;
 }
